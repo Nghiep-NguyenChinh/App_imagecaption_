@@ -42,7 +42,8 @@ def get_device(device_id: int) -> D:
 
 
 
-model_path = os.path.join(save_path, 'model_wieghts.pt')
+# model_path = os.path.join(save_path, 'model_wieghts.pt')
+model_path =  "model_weights.pt"
 #@title Model
 
 class MLP(nn.Module):
