@@ -237,7 +237,8 @@ prefix_length = 10
 
 model = ClipCaptionModel(prefix_length)
 
-model.load_state_dict(torch.load(model_path, map_location=CPU)) 
+# model.load_state_dict(torch.load(model_path, map_location=CPU)) 
+model.load_state_dict(model_path, map_location=CPU)) 
 
 model = model.eval() 
 device = CUDA(0) if is_gpu else "cpu"
