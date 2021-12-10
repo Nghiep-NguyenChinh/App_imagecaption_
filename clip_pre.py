@@ -13,6 +13,8 @@ import skimage.io as io
 import PIL.Image
 from IPython.display import Image 
 
+import streamlit as st
+
 
 N = type(None)
 V = np.array
@@ -40,11 +42,7 @@ def get_device(device_id: int) -> D:
     return torch.device(f'cuda:{device_id}')
 
 
-CUDA = get_device
 
-current_directory = os.getcwd()
-save_path = os.path.join(os.path.dirname(current_directory), "pretrained_models")
-os.makedirs(save_path, exist_ok=True)
 model_path = os.path.join(save_path, 'model_wieghts.pt')
 #@title Model
 
@@ -102,7 +100,7 @@ class ClipCaptionPrefix(ClipCaptionModel):
         self.gpt.eval()
         return self
       
- ##@title Caption prediction
+
 
 def generate_beam(model, tokenizer, beam_size: int = 5, prompt=None, embed=None,
                   entry_length=67, temperature=1., stop_token: str = '.'):
@@ -233,7 +231,6 @@ tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
 
 
 ######## load weight
-#@title Load model weights
 
 
 prefix_length = 10
@@ -246,39 +243,28 @@ model = model.eval()
 device = CUDA(0) if is_gpu else "cpu"
 model = model.to(device)
 
-#########upload imag
-
-uploaded = files.upload()
-
-if not uploaded:
-  UPLOADED_FILE = ''
-elif len(uploaded) == 1:
-  UPLOADED_FILE = list(uploaded.keys())[0]
-else:
-  raise AssertionError('Please upload one image at a time')
-
-print(UPLOADED_FILE)
-
-#@title Inference
-use_beam_search = False #@param {type:"boolean"}  
-
-image = io.imread(UPLOADED_FILE)
-pil_image = PIL.Image.fromarray(image)
-#pil_img = Image(filename=UPLOADED_FILE)
-display(pil_image)
-
-image = preprocess(pil_image).unsqueeze(0).to(device)
-with torch.no_grad():
-    # if type(model) is ClipCaptionE2E:
-    #     prefix_embed = model.forward_image(image)
-    # else:
-    prefix = clip_model.encode_image(image).to(device, dtype=torch.float32)
-    prefix_embed = model.clip_project(prefix).reshape(1, prefix_length, -1)
-if use_beam_search:
-    generated_text_prefix = generate_beam(model, tokenizer, embed=prefix_embed)[0]
-else:
-    generated_text_prefix = generate2(model, tokenizer, embed=prefix_embed)
+#######  upload imag
+def upload_image(UPLOADED_FILE):
 
 
-print('\n')
-print(generated_text_prefix)
+    use_beam_search = False #@param {type:"boolean"}  
+
+    image = io.imread(UPLOADED_FILE)
+    pil_image = PIL.Image.fromarray(image)
+    #pil_img = Image(filename=UPLOADED_FILE)
+    st.image(pil_image, "Ảnh gốc")
+    image = preprocess(pil_image).unsqueeze(0).to(device)
+    with torch.no_grad():
+        # if type(model) is ClipCaptionE2E:
+        #     prefix_embed = model.forward_image(image)
+        # else:
+        prefix = clip_model.encode_image(image).to(device, dtype=torch.float32)
+        prefix_embed = model.clip_project(prefix).reshape(1, prefix_length, -1)
+    if use_beam_search:
+        generated_text_prefix = generate_beam(model, tokenizer, embed=prefix_embed)[0]
+    else:
+        generated_text_prefix = generate2(model, tokenizer, embed=prefix_embed)
+
+
+    
+    st.write(generated_text_prefix)
