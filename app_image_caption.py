@@ -12,7 +12,7 @@ import requests
 ##### GIAO DIỆN
 #########################################################
 #st.title("**OBJECT DETECTION**")
-st.markdown("<h1 style='text-align: center;'>OBJECT DETECTION</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>IMAGE CAPTIONING</h1>", unsafe_allow_html=True)
 st.markdown("""
 
 |Menter   | Huỳnh Trọng Nghĩa  |
@@ -56,7 +56,7 @@ option = st.selectbox('Chọn model',('CLIP_', 'Yolov4'))
 img_l = st.file_uploader("Upload Image",type=['jpg'])
 
 
-button = st.button("Bắt đầu nhận diện")
+button = st.button("Bắt đầu tạo caption")
 
 if button:
     clip_pre.upload_image(img_l)
