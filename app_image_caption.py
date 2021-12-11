@@ -22,7 +22,7 @@ st.markdown("""
             
             , unsafe_allow_html=True)
 
-st.write("")
+st.write("Bắt đầu dowload")
 #Ham tải về
 ##  Kiểm tra file 'name' có tồn tại chưa || không thì kéo nội dung từ link url tạo thành name 
 ##
@@ -35,6 +35,7 @@ def download(url, name):
         f.close()
 #     else:
 #         st.write("Đã tìm thấy file %s!" % name)
+
 
 #st.write("Đang lấy file weights...")
 download('https://archive.org/download/model_wieghts/model_clip/model_wieghts.pt',"model_weights.pt")
