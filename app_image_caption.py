@@ -1,6 +1,7 @@
 import streamlit as st
 import  os
 # Import libraries
+sys.path.append("app_imagecaption_")
 import clip_pre
 
 
