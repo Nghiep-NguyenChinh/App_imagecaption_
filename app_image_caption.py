@@ -45,7 +45,7 @@ import clip_pre
 st.write("Trạng thái: Sẵn sàng")
 
 
-option = st.selectbox('Chọn model',('Faster-RCNN', 'Yolov4'))
+option = st.selectbox('Chọn model',('CLIP_', 'Yolov4'))
 #st.write('You selected:', option)
 
 ##################################################################
@@ -56,9 +56,10 @@ option = st.selectbox('Chọn model',('Faster-RCNN', 'Yolov4'))
 img_l = st.file_uploader("Upload Image",type=['jpg'])
 
 
-clip_pre.upload_image(img_l)
+button = st.button("Bắt đầu nhận diện")
 
-btn = st.button("Bắt đầu nhận diện")
+if button:
+    clip_pre.upload_image(img_l)
 
 
 
