@@ -2,7 +2,7 @@ import streamlit as st
 import  os
 # Import libraries
 # sys.path.append("app_imagecaption_")
-import clip_pre
+
 
 
 
@@ -38,6 +38,8 @@ def download(url, name):
 
 #st.write("Đang lấy file weights...")
 download('https://archive.org/download/model_wieghts/model_clip/model_wieghts.pt',"model_weights.pt")
+
+import clip_pre
 st.write("Trạng thái: Sẵn sàng")
 
 
