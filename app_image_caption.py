@@ -1,5 +1,6 @@
 import streamlit as st
 import  os
+import requests
 # Import libraries
 # sys.path.append("app_imagecaption_")
 
