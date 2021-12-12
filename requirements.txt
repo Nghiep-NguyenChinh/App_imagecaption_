@@ -6,3 +6,4 @@ torchvision
 transformers
 scikit-image
 click<8.0
+gdown
