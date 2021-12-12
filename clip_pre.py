@@ -268,4 +268,4 @@ def upload_image(UPLOADED_FILE):
 
 
     
-    st.write(generated_text_prefix)
+#     st.write(generated_text_prefix)
