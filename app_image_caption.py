@@ -6,7 +6,7 @@ import requests
 
 import gdown
 
-url = https://drive.google.com/file/d/1-bKUmsoKXAhr-wvlaXqaQxBhEte0fUsB/view?usp=sharing
+url = "https://drive.google.com/file/d/1-bKUmsoKXAhr-wvlaXqaQxBhEte0fUsB/view?usp=sharing"
 output = model_weights.pt
 gdown.download(url, output, quiet=False)
 
