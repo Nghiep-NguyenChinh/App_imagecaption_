@@ -57,9 +57,9 @@ img_l = st.file_uploader("Upload Image",type=['jpg'])
 
 
 button = st.button("Bắt đầu tạo caption")
-
+clip_pre.upload_image(img_l)
 if button:
-    clip_pre.upload_image(img_l)
+    st.write(generated_text_prefix)
 
 
 
