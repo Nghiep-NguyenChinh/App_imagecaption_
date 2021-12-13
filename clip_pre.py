@@ -264,5 +264,5 @@ def upload_image(UPLOADED_FILE):
     if use_beam_search:
         generated_text_prefix = generate_beam(model, tokenizer, embed=prefix_embed)[0]
     else:
-        generated_text_prefix = generate2(model, tokenizer, embed=prefix_embed)[0]
+        generated_text_prefix = generate2(model, tokenizer, embed=prefix_embed)
     st.write(generated_text_prefix)
