@@ -4,11 +4,11 @@ import requests
 # Import libraries
 # sys.path.append("app_imagecaption_")
 
-import gdown
+# import gdown
 
-url = "https://drive.google.com/file/d/1-bKUmsoKXAhr-wvlaXqaQxBhEte0fUsB/view?usp=sharing"
-output = "model_weights.pt"
-gdown.download(url, output, quiet=False)
+# url = "https://drive.google.com/file/d/1-bKUmsoKXAhr-wvlaXqaQxBhEte0fUsB/view?usp=sharing"
+# output = "model_weights.pt"
+# gdown.download(url, output, quiet=False)
 
 
 
@@ -43,7 +43,7 @@ def download(url, name):
 
 
 #st.write("Đang lấy file weights...")
-# download('https://archive.org/download/model_wieghts/model_clip/model_wieghts.pt',"model_weights.pt")
+#download('https://archive.org/download/model_wieghts/model_clip/model_wieghts.pt',"model_weights.pt")
 
 import clip_pre
 st.write("Trạng thái: Sẵn sàng")
