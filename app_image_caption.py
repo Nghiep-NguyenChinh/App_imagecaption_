@@ -19,7 +19,7 @@ import requests
 st.markdown("<h1 style='text-align: center;'>IMAGE CAPTIONING</h1>", unsafe_allow_html=True)
 st.markdown("""
 
-|Menter   | Nguyễn Minh Trang  |
+|Mentor   | Nguyễn Minh Trang  |
 |:-------:|:------------------:|
 | Mentees |Hà Sơn Tùng         |
 |         |Nguyễn Văn Trực     |
