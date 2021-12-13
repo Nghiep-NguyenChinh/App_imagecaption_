@@ -21,8 +21,10 @@ st.markdown("""
 
 |Menter   | Huỳnh Trọng Nghĩa  |
 |:-------:|:------------------:|
-| Mentees |Nguyễn Chính Nghiệp  |
-|         |Hà Sơn Tùng         |
+| Mentees |Hà Sơn Tùng         |
+|         |Nguyễn Văn Trực     |
+|         |Phạm Ngọc Phương Linh |
+|         |Nguyễn Chính Nghiệp |
 """
             
             , unsafe_allow_html=True)
