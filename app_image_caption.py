@@ -8,7 +8,7 @@ import gdown
 
 url = "https://drive.google.com/uc?id=1-bKUmsoKXAhr-wvlaXqaQxBhEte0fUsB"
 output = "model_weights.pt"
-gdown.download(url, output, quiet=False)
+
 
 
 
@@ -33,19 +33,14 @@ st.write("Bắt đầu dowload")
 #Ham tải về
 ##  Kiểm tra file 'name' có tồn tại chưa || không thì kéo nội dung từ link url tạo thành name 
 ##
-def download(url, name):      
-    if (os.path.exists(name)==False):
+def download(url, output):      
+    if (os.path.exists(output)==False):
         #st.write("Đang lấy file %s..." % name)
-        w = requests.get(url).content  # lấy nội dung url
-        with open(name,'wb') as f:
-            st.write(f.write(w))   # in ra màn hình
-        f.close()
-#     else:
-#         st.write("Đã tìm thấy file %s!" % name)
+        gdown.download(url, output, quiet=False)
 
 
 #st.write("Đang lấy file weights...")
-# download('https://archive.org/download/model_wieghts/model_clip/model_wieghts.pt',"model_weights.pt")
+download(url, output)
 
 import clip_pre
 st.write("Trạng thái: Sẵn sàng")
