@@ -4,7 +4,7 @@ import  os
 # Import libraries
 # sys.path.append("app_imagecaption_")
 # Images
-from PIL import Image
+import PIL.Image
 import gdown
 
 url = "https://drive.google.com/uc?id=1-bKUmsoKXAhr-wvlaXqaQxBhEte0fUsB"
