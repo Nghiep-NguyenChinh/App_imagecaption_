@@ -15,10 +15,9 @@ output = "model_weights.pt"
 #########################################################
 ##### GIAO DIỆN
 #########################################################
-#st.title("**OBJECT DETECTION**")
-st.markdown("<h1 style='text-align: center;'>IMAGE CAPTIONING</h1>", unsafe_allow_html=True)
+st.title("Karim Territory")
 
-
+st.subheader(" Demo Image Captioning")
 st.write("Bắt đầu dowload")
 #Ham tải về
 ##  Kiểm tra file 'name' có tồn tại chưa || không thì kéo nội dung từ link url tạo thành name 
