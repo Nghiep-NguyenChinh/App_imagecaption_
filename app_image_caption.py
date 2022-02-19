@@ -44,9 +44,8 @@ st.write("Trạng thái: Sẵn sàng")
 img_l = st.file_uploader("Upload Image",type=['jpg'])
 
 image = io.imread(img_l)
-    pil_image = PIL.Image.fromarray(image)
-    #pil_img = Image(filename=UPLOADED_FILE)
-    st.image(pil_image, "Ảnh gốc")
+pil_image = PIL.Image.fromarray(image)
+st.image(pil_image, "Ảnh gốc")
 
 button = st.button("Bắt đầu tạo caption")
 if button:
