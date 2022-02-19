@@ -41,7 +41,7 @@ st.write("Trạng thái: Sẵn sàng")
 #### MAIN
 ################
 img_l = st.file_uploader("Upload Image",type=['jpg'])
-
+st.image(img_l, width=300, caption="Ảnh gốc")
 
 button = st.button("Bắt đầu tạo caption")
 if button:
