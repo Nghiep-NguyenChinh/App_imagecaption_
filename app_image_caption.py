@@ -42,11 +42,15 @@ st.write("Trạng thái: Sẵn sàng")
 #### MAIN
 ################
 img_l = st.file_uploader("Upload Image",type=['jpg'])
-st.image(img_l, width=300, caption="Ảnh gốc")
+
+image = io.imread(img_l)
+    pil_image = PIL.Image.fromarray(image)
+    #pil_img = Image(filename=UPLOADED_FILE)
+    st.image(pil_image, "Ảnh gốc")
 
 button = st.button("Bắt đầu tạo caption")
 if button:
-    clip_pre.upload_image(img_l)
+    clip_pre.upload_image(image)
 
     
 
