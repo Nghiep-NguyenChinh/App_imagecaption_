@@ -17,17 +17,7 @@ output = "model_weights.pt"
 #########################################################
 #st.title("**OBJECT DETECTION**")
 st.markdown("<h1 style='text-align: center;'>IMAGE CAPTIONING</h1>", unsafe_allow_html=True)
-st.markdown("""
 
-|Mentor   | Nguyễn Minh Trang  |
-|:-------:|:------------------:|
-| Mentees |Hà Sơn Tùng         |
-|         |Nguyễn Văn Trực     |
-|         |Phạm Ngọc Phương Linh |
-|         |Nguyễn Chính Nghiệp |
-"""
-            
-            , unsafe_allow_html=True)
 
 st.write("Bắt đầu dowload")
 #Ham tải về
@@ -45,9 +35,6 @@ download(url, output)
 import clip_pre
 st.write("Trạng thái: Sẵn sàng")
 
-
-option = st.selectbox('Chọn model',('CLIP_', 'Yolov4'))
-#st.write('You selected:', option)
 
 ##################################################################
 
