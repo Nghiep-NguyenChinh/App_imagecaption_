@@ -247,9 +247,9 @@ model = model.to(device)
 #######  upload image
 def upload_image(UPLOADED_FILE):
     image = preprocess(pil_image).unsqueeze(0).to(device)
-    with torch.no_grad()
-        prefix = clip_model.encode_image(image).to(device, dtype=torch.float32)
-        prefix_embed = model.clip_project(prefix).reshape(1, prefix_length, -1)
+    
+    prefix = clip_model.encode_image(image).to(device, dtype=torch.float32)
+    prefix_embed = model.clip_project(prefix).reshape(1, prefix_length, -1)
     
     generated_text_prefix = generate2(model, tokenizer, embed=prefix_embed)
     st.write(generated_text_prefix)
